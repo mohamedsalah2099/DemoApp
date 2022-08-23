@@ -14,6 +14,7 @@ public class PersonController {
         this.personService = personService;
     }
 
+    @CrossOrigin(origins = "http://localhost:8080/test")
     @GetMapping(value = "/get/{id}")
     public ResponseEntity<Motable> getUser(@PathVariable("id") int id){
         return ResponseEntity.ok(personService.getMotable(id));
